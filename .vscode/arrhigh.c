@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n=5,sum=0,i,arr[100];
+    int n=5,high=-9,i,arr[10];
     printf("enter elements into the array\n");
     for(int i=0;i<n;i++)
     {
@@ -9,7 +9,10 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-         sum+=arr[i];
+         if(arr[i]>high)
+         {
+            high=arr[i];
+         }
     }
-    printf("sum= %d\n",sum);
+    printf("hihest in arry= %d\n",high);
 }
