@@ -1,14 +1,15 @@
 #include<stdio.h>
 int main()
 {
-    int n=5,high=0;
-    int arr[10]={5,100,3,9,2};
+    int n=5,sum=0,i,arr[10];
+    printf("enter elements into the array\n");
     for(int i=0;i<n;i++)
     {
-        if(arr[i]>high)
-        {
-            high=arr[i];
-        }
+        scanf("%d",&arr[i]);
     }
-    printf("largest element in the arryis %d\n",high);
+    for(i=0;i<n;i++)
+    {
+         sum+=arr[i];
+    }
+    printf("sum= %d\n",sum);
 }
