@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n=5,high=-9,i,arr[10];
+    int n=5,high=0,i,arr[10],sechigh=0,digit;
     printf("enter elements into the array\n");
     for(int i=0;i<n;i++)
     {
@@ -9,12 +9,17 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-         
          if(arr[i]>high)
          {
+            sechigh=high;
             high=arr[i];
+         }
+         else if(arr[i]>sechigh && arr[i]!=high)
+         {
+            sechigh=arr[i];
          }
         
     }
-    printf("hihest in arry= %d\n",high);
+    printf("highest=%d\n",high);
+    printf("secondhighest in arry= %d\n",sechigh);
 }
