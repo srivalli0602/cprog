@@ -1,28 +1,35 @@
 #include<stdio.h>
 int main()
 {
-    int i,temp,n,arr[100];
+    int i,n,arr[50];
+    int *ptr=&arr[0];
+    int *temp;
     printf("enter array size\n");
     scanf("%d",&n);
     printf("enter elements into array\n");
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&ptr[i]);
     }
     printf("original array\n");
     for(i=0;i<n;i++)
     {
-        printf("%d ",arr[i]);
+        printf("%d ",ptr[i]);
     }
-    for(i=0;i<n/2;i++)
+    int *left=arr;
+    int *right=arr+n-1;
+    while(left<right)
     {
-        temp=arr[i];
-        arr[i]=arr[n-i-1];
-        arr[n-i-1]=temp;
+        temp=*left;
+        *left=*right;
+        *right=temp;
+
+        left++;
+        right--;
     }
      printf("\nreversed array\n");
      for(i=0;i<n;i++)
      {
-        printf("%d ",arr[i]);
+        printf("%d ",ptr[i]);
      }
 }
